@@ -5,8 +5,9 @@ income_list = []
 expense_list = []
 
 def show_menu():
-    print("\nStudent Budget Tracker")
-    print("----------------------")
+    print("\n============================")
+    print("    Student Budget Tracker   ")
+    print("============================")
     print("1. Add income")
     print("2. Add expense")
     print("3. View summary")
@@ -67,3 +68,23 @@ def view_summary():
     print(f"Total Income: £{total_income:.2f}")
     print(f"Total Expenses: £{total_expenses:.2f}")
     print(f"Balance: £{balance:.2f}")
+
+def main():
+    while True:
+        show_menu()
+        choice = input("Choose an option (1-4): ")
+
+        if choice == "1":
+            add_income()
+        elif choice == "2":
+            add_expense()
+        elif choice == "3":
+            view_summary()
+        elif choice == "4":  # polished exit
+            print("\nThanks for using Student Budget Tracker! See you next time.\n")
+            break
+        else:
+            print("Invalid choice. Please enter 1-4.")
+
+if __name__ == "__main__":
+    main()
